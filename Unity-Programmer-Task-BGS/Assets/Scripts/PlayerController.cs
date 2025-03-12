@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private CharacterController _cc;
+    [SerializeField] private float _playerSpeed;
+
+    private Vector3 currentMotion;
+
+    private void Update()
     {
-        
+        _cc.SimpleMove(currentMotion * _playerSpeed);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMove(InputValue action)
     {
-        
+        Vector2 actionValue = action.Get<Vector2>();
+
+        currentMotion = new Vector3(actionValue.x, 0, actionValue.y);
     }
 }
