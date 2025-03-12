@@ -228,23 +228,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &383817196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 560474711708589527, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
-  m_PrefabInstance: {fileID: 7434416734276528438}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &383817198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383817196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2cad91d512d86446849549c59bcfa77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +414,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &1693529465 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 9096722369307210429, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
+  m_PrefabInstance: {fileID: 7434416734276528438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7434416734276528438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -442,6 +430,14 @@ PrefabInstance:
     - target: {fileID: 560474711708589527, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710751614271904689, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
+      propertyPath: _cc
+      value: 
+      objectReference: {fileID: 1693529465}
+    - target: {fileID: 1710751614271904689, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
+      propertyPath: _playerSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7315651446987944868, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
       propertyPath: m_LocalPosition.x
@@ -489,8 +485,43 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 560474711708589527, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 383817198}
+      addedObject: {fileID: 7434416734276528440}
   m_SourcePrefab: {fileID: 100100000, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
+--- !u!1 &7434416734276528439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 560474711708589527, guid: 131b46c31d227314cb90e1030a7dc517, type: 3}
+  m_PrefabInstance: {fileID: 7434416734276528438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7434416734276528440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7434416734276528439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c20ef01d6dadaa24ea2c89686c40ce3d, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
