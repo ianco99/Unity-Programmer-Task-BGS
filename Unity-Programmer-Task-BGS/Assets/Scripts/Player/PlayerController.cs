@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+namespace BGS.Player
 {
-    [SerializeField] private CharacterController _cc;
-    [SerializeField] private float _playerSpeed;
-
-    private Vector3 currentMotion;
-
-    private void Update()
+    public class PlayerController : MonoBehaviour
     {
-        _cc.SimpleMove(currentMotion * _playerSpeed);
-    }
+        [SerializeField] private CharacterController _cc;
+        [SerializeField] private float _playerSpeed;
 
-    private void OnMove(InputValue action)
-    {
-        Vector2 actionValue = action.Get<Vector2>();
+        private Vector3 currentMotion;
 
-        currentMotion = new Vector3(actionValue.x, 0, actionValue.y);
+        private void Update()
+        {
+            _cc.SimpleMove(currentMotion * _playerSpeed);
+        }
+
+        private void OnMove(InputValue action)
+        {
+            Vector2 actionValue = action.Get<Vector2>();
+
+            currentMotion = new Vector3(actionValue.x, 0, actionValue.y);
+        }
     }
 }

@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class InventoryController
+namespace BGS.Inventory
 {
-    
-    public void AddItem()
+    public class InventoryController
     {
+        public void AddItem()
+        {
 
-    }
+        }
 
-    public void RemoveItem()
-    {
+        public void RemoveItem()
+        {
 
-    }
+        }
 
-    public void ClearItems()
-    {
+        public void ClearItems()
+        {
 
+        }
     }
 }
