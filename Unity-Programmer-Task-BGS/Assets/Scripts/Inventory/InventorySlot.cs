@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace BGS.Inventory
 {
-    public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         private ISlottable _slottable;
 
@@ -13,6 +14,16 @@ namespace BGS.Inventory
         [SerializeField] private BaseItemSettings _itemConfig;
 
         private Item _storedItem;
+
+        public Item StoredItem => _storedItem;
+
+        public Action<bool, Item> OnHovering;
+        public Action<Item> OnClick;
+
+        private void Awake()
+        {
+            SlotUpdate();
+        }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
@@ -32,11 +43,12 @@ namespace BGS.Inventory
 
         private void ToggleHover(bool value)
         {
+            OnHovering?.Invoke(value, _storedItem);
             _blinkImage.SetActive(value);
         }
 
         [ContextMenu("Update slot content")]
-        private void EditorSlotUpdate()
+        private void SlotUpdate()
         {
             if (_itemConfig)
             {
@@ -53,14 +65,21 @@ namespace BGS.Inventory
 
         private void UpdateSlotContent()
         {
-            if(_storedItem == null)
+            if (_storedItem == null)
             {
                 _slotImage.gameObject.SetActive(false);
                 return;
             }
 
             _slotImage.gameObject.SetActive(true);
-            _slotImage.overrideSprite = _storedItem.ImagePV;
+            _slotImage.sprite = _storedItem.ImagePV;
         }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            OnClick?.Invoke(_storedItem);
+        }
+
+        public bool IsEmpty() => _storedItem == null;
     }
 }

@@ -17,6 +17,6 @@ MonoBehaviour:
   Description: Restores 50 HP on usage.
   Quote: May the gods attend your wounds.
   ImagePV: {fileID: 21300000, guid: 346132269c29c4947a0c252215b9062f, type: 3}
-  ImageHD: {fileID: 0}
-  IsSellable: 0
-  Price: 0
+  ImageHD: {fileID: 21300000, guid: ed7cca1470f34ca439bc0c833f789127, type: 3}
+  IsSellable: 1
+  Price: 20

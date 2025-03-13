@@ -17,9 +17,9 @@ namespace BGS.Inventory
         protected int _id;
 
         public string Type { get => _type; protected set => _type = value; }
-        public string Name { get => _type; protected set => _type = value; }
-        public string Description { get => _type; protected set => _type = value; }
-        public string Quote { get => _type; protected set => _type = value; }
+        public string Name { get => _name; protected set => _name = value; }
+        public string Description { get => _description; protected set => _description = value; }
+        public string Quote { get => _quote; protected set => _quote = value; }
 
         public bool IsSellable { get => _isSellable; protected set => _isSellable = value; }
         public int Price { get => _price; protected set => _price = value; }
@@ -36,7 +36,6 @@ namespace BGS.Inventory
             _quote = config.Quote;
             _isSellable = config.IsSellable;
             _price = config.Price;
-            //_id;
 
             _imagePV = config.ImagePV;
             _imageHD = config.ImageHD;
