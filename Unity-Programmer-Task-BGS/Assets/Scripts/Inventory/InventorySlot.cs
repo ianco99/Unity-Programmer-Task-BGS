@@ -5,42 +5,59 @@ using UnityEngine.UI;
 
 namespace BGS.Inventory
 {
-    public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
     {
-        //private ISlottable _slottable;
-
         [SerializeField] private Image _slotImage;
         [SerializeField] private GameObject _blinkImage;
         [SerializeField] private BaseItemSettings _itemConfig;
 
         private Item _storedItem;
 
+        private bool isHolding = false;
+        private bool isDraggingItem = false;
+        private float holdTime = 0.3f;
+        private float holdTimer = 0f;
+
         public Item StoredItem => _storedItem;
 
-        public Action<bool, Item> OnHovering;
+        public Action<bool, InventorySlot> OnHovering;
         public Action<Item> OnLeftClick;
         public Action<Item> OnRightClick;
+        public Action<bool, Item, InventorySlot> OnLeftHold;
 
         private void Awake()
         {
             SlotUpdate();
         }
 
+        private void Update()
+        {
+            if (isHolding)
+            {
+                holdTimer += Time.deltaTime;
+                if (holdTimer >= holdTime)
+                {
+                    OnHoldComplete();
+                    isHolding = false;
+                }
+            }
+        }
+
         public void StoreItem(Item item)
         {
             _storedItem = item;
-            UpdateSlotContent();
+            UpdateSlotVisuals();
         }
 
         public void EmptyItem()
         {
             _storedItem = null;
-            UpdateSlotContent();
+            UpdateSlotVisuals();
         }
 
         private void ToggleHover(bool value)
         {
-            OnHovering?.Invoke(value, _storedItem);
+            OnHovering?.Invoke(value, this);
             _blinkImage.SetActive(value);
         }
 
@@ -57,10 +74,10 @@ namespace BGS.Inventory
                 _storedItem = null;
             }
 
-            UpdateSlotContent();
+            UpdateSlotVisuals();
         }
 
-        private void UpdateSlotContent()
+        private void UpdateSlotVisuals()
         {
             if (_storedItem == null)
             {
@@ -88,6 +105,37 @@ namespace BGS.Inventory
         public void OnPointerExit(PointerEventData eventData)
         {
             ToggleHover(false);
+
+            isHolding = false;
+            holdTimer = 0f;
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            isHolding = true;
+            holdTimer = 0f;
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            isHolding = false;
+            holdTimer = 0f;
+
+            if (isDraggingItem && _storedItem != null)
+            {
+                OnLeftHold?.Invoke(false, _storedItem, this);
+            }
+        }
+
+        private void OnHoldComplete()
+        {
+            if (_storedItem != null)
+            {
+                OnLeftHold?.Invoke(true, _storedItem, this);
+            }
+
+            isDraggingItem = true;
+            Debug.Log("Hold Completed!");
         }
 
         public bool IsEmpty() => _storedItem == null;

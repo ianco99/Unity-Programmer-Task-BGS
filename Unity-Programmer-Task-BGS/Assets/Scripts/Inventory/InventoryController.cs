@@ -12,8 +12,12 @@ namespace BGS.Inventory
         [SerializeField] private GameObject _inventorySlotPrefab;
         [SerializeField] private BaseItemSettings _testSettings;
         [SerializeField] private Transform _slotsParent;
+        [SerializeField] private TrashSlot[] _trashSlots;
 
         [SerializeField] private int _inventorySize;
+
+        private InventorySlot _hoveredSlot;
+        private bool _hoveringTrash;
 
         private void Awake()
         {
@@ -28,6 +32,11 @@ namespace BGS.Inventory
         private void Init()
         {
             _inventoryModel.Init(this);
+
+            for (int i = 0; i < _trashSlots.Length; i++)
+            {
+                _trashSlots[i].OnHovering += TrashHovering;
+            }
         }
 
         [ContextMenu("Spawn slot grid")]    //Button useful for editor visual adjustments
@@ -77,19 +86,58 @@ namespace BGS.Inventory
                 _inventoryView.UpdateDetailsPanel(item.ImageHD, item.Description, item.Quote);
         }
 
-        public void SlotRightClicked(Item item)
+        public void SlotLeftHolded(bool value, Item item, InventorySlot slot)
         {
-            _inventoryView.ClearDetailsPanel();
-            
-            if (item != null)
+            if (value)
             {
-                _inventoryModel.RemoveItem(item);
+                _inventoryView.SetDragNDropImage(item?.ImagePV);
+
+                for (int i = 0; i < _trashSlots.Length; i++)
+                {
+                    _trashSlots[i].gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                _inventoryView.SetDragNDropImage(null);
+
+                if(_hoveredSlot != null)
+                {
+                    _inventoryModel.SwapItems(slot, _hoveredSlot);
+                }
+                else if (_hoveringTrash)
+                {
+                    _inventoryModel.RemoveItem(item);
+                }
+
+                for (int i = 0; i < _trashSlots.Length; i++)
+                {
+                    _trashSlots[i].gameObject.SetActive(false);
+                }
             }
         }
 
-        public void SlotHovering(bool value, Item item)
+        public void SlotRightClicked(Item item)
         {
+            //_inventoryView.ClearDetailsPanel();
+            //
+            //if (item != null)
+            //{
+            //    _inventoryModel.RemoveItem(item);
+            //}
+        }
 
+        public void SlotHovering(bool value, InventorySlot slot)
+        {
+            if (value)
+                _hoveredSlot = slot;
+            else
+                _hoveredSlot = null;
+        }
+
+        private void TrashHovering(bool value)
+        {
+            _hoveringTrash = value;
         }
 
         [ContextMenu("Add test item")]
