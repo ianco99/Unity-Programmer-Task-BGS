@@ -619,6 +619,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5397445596503487852, guid: 6a5b4f5158f95ef44bb883af3143213a, type: 3}
+      propertyPath: _itemConfig
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351379731870858799, guid: 6a5b4f5158f95ef44bb883af3143213a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8398922113337506253, guid: 6a5b4f5158f95ef44bb883af3143213a, type: 3}
       propertyPath: m_Name
       value: InventorySlot
