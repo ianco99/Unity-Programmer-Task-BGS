@@ -70,12 +70,22 @@ namespace BGS.Inventory
             return slots;
         }
 
-        public void SlotClicked(Item item)
+        public void SlotLeftClicked(Item item)
         {
             if (item == null)
                 _inventoryView.ClearDetailsPanel();
             else
                 _inventoryView.UpdateDetailsPanel(item.ImageHD, item.Description, item.Quote);
+        }
+
+        public void SlotRightClicked(Item item)
+        {
+            _inventoryView.ClearDetailsPanel();
+            
+            if (item != null)
+            {
+                _inventoryModel.RemoveItem(item);
+            }
         }
 
         public void SlotHovering(bool value, Item item)

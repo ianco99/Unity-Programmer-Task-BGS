@@ -7,7 +7,7 @@ namespace BGS.Inventory
 {
     public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
-        private ISlottable _slottable;
+        //private ISlottable _slottable;
 
         [SerializeField] private Image _slotImage;
         [SerializeField] private GameObject _blinkImage;
@@ -18,26 +18,23 @@ namespace BGS.Inventory
         public Item StoredItem => _storedItem;
 
         public Action<bool, Item> OnHovering;
-        public Action<Item> OnClick;
+        public Action<Item> OnLeftClick;
+        public Action<Item> OnRightClick;
 
         private void Awake()
         {
             SlotUpdate();
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            ToggleHover(true);
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            ToggleHover(false);
-        }
-
         public void StoreItem(Item item)
         {
             _storedItem = item;
+            UpdateSlotContent();
+        }
+
+        public void EmptyItem()
+        {
+            _storedItem = null;
             UpdateSlotContent();
         }
 
@@ -77,7 +74,20 @@ namespace BGS.Inventory
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            OnClick?.Invoke(_storedItem);
+            if (eventData.button == PointerEventData.InputButton.Left)
+                OnLeftClick?.Invoke(_storedItem);
+            else if (eventData.button == PointerEventData.InputButton.Right)
+                OnRightClick?.Invoke(_storedItem);
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            ToggleHover(true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            ToggleHover(false);
         }
 
         public bool IsEmpty() => _storedItem == null;

@@ -16,10 +16,11 @@ namespace BGS.Inventory
 
             if (_slots == null)
                 _inventoryController.InitializeInventorySlots();
-        
+
             for (int i = 0; i < _slots.Count; i++)
             {
-                _slots[i].OnClick += OnClickHandler;
+                _slots[i].OnLeftClick += OnLeftClickHandler;
+                _slots[i].OnRightClick += OnRightClickHandler;
                 _slots[i].OnHovering += OnHoveringHandler;
             }
         }
@@ -46,26 +47,25 @@ namespace BGS.Inventory
             }
         }
 
-        public void RemoveItem(int idToRemove)
+        public void RemoveItem(Item item)
         {
             try
             {
-                int index = 0;
                 foreach (var slot in _slots)
                 {
-                    if (slot.StoredItem.ID == idToRemove)
-                    {
-                        slot.OnClick -= OnClickHandler;
-                        slot.OnHovering -= OnHoveringHandler;
-                        _slots.RemoveAt(index);
-                    }
+                    if (slot.StoredItem == null)
+                        continue;
 
-                    index++;
+                    if (slot.StoredItem == item)
+                    {
+                        slot.EmptyItem();
+                        break;
+                    }
                 }
             }
             catch (System.Exception)
             {
-                Debug.LogError("Error removing itemToAdd from inventory");
+                Debug.LogError("Error removing item from inventory");
                 throw;
             }
         }
@@ -81,7 +81,8 @@ namespace BGS.Inventory
             {
                 for (int i = 0; i < _slots.Count; i++)
                 {
-                    _slots[i].OnClick -= OnClickHandler;
+                    _slots[i].OnLeftClick -= OnLeftClickHandler;
+                    _slots[i].OnRightClick -= OnLeftClickHandler;
                     _slots[i].OnHovering -= OnHoveringHandler;
                 }
             }
@@ -92,9 +93,14 @@ namespace BGS.Inventory
             }
         }
 
-        private void OnClickHandler(Item item)
+        private void OnLeftClickHandler(Item item)
         {
-            _inventoryController.SlotClicked(item);
+            _inventoryController.SlotLeftClicked(item);
+        }
+
+        private void OnRightClickHandler(Item item)
+        {
+            _inventoryController.SlotRightClicked(item);
         }
 
         private void OnHoveringHandler(bool value, Item item)
