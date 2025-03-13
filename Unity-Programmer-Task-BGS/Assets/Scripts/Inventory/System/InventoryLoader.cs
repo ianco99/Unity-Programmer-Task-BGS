@@ -88,7 +88,6 @@ namespace BGS.Inventory
 
         public void LoadItem(string name)
         {
-            Debug.Log("arrived");
             for (int i = 0; i < itemSettings.Length; i++)
             {
                 if (name == itemSettings[i].Name)
