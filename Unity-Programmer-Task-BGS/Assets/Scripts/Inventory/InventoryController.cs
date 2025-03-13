@@ -15,6 +15,8 @@ namespace BGS.Inventory
 
         [SerializeField] private int _inventorySize;
 
+        private InventorySlot _hoveredSlot;
+
         private void Awake()
         {
             Init();
@@ -77,19 +79,41 @@ namespace BGS.Inventory
                 _inventoryView.UpdateDetailsPanel(item.ImageHD, item.Description, item.Quote);
         }
 
+        public void SlotLeftHolded(bool value, Item item, InventorySlot slot)
+        {
+            if (value)
+            {
+                _inventoryView.SetDragNDropImage(item?.ImagePV);
+            }
+            else
+            {
+                _inventoryView.SetDragNDropImage(null);
+
+                if(_hoveredSlot != null)
+                {
+                    _inventoryModel.SwapItems(slot, _hoveredSlot);
+                    //_hoveredSlot.StoreItem(item);
+                    //slot.EmptyItem();
+                }
+            }
+        }
+
         public void SlotRightClicked(Item item)
         {
             _inventoryView.ClearDetailsPanel();
-            
+
             if (item != null)
             {
                 _inventoryModel.RemoveItem(item);
             }
         }
 
-        public void SlotHovering(bool value, Item item)
+        public void SlotHovering(bool value, InventorySlot slot)
         {
-
+            if (value)
+                _hoveredSlot = slot;
+            else
+                _hoveredSlot = null;
         }
 
         [ContextMenu("Add test item")]

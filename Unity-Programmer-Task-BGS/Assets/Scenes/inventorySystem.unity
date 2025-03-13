@@ -252,7 +252,6 @@ MonoBehaviour:
   _slotImage: {fileID: 48940003}
   _blinkImage: {fileID: 2081832524}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &19160758
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 346132269c29c4947a0c252215b9062f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e861c4208dbfdfb459b170645d96ea0e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -457,7 +456,6 @@ MonoBehaviour:
   _slotImage: {fileID: 118193714}
   _blinkImage: {fileID: 548337366}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &46101962
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +510,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1731196207}
   _blinkImage: {fileID: 1370126471}
   _itemConfig: {fileID: 11400000, guid: a5ebddd6b0c93d442bbe1dc0e3a56e94, type: 2}
-  holdTime: 0.5
 --- !u!1 &48940001
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +714,6 @@ MonoBehaviour:
   _slotImage: {fileID: 148883908}
   _blinkImage: {fileID: 1348477164}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &97938603
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +918,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1245619169}
   _blinkImage: {fileID: 1090796338}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &146138877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,7 +1422,6 @@ MonoBehaviour:
   _slotImage: {fileID: 2144017084}
   _blinkImage: {fileID: 433187827}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &173307097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1476,6 @@ MonoBehaviour:
   _slotImage: {fileID: 2101268990}
   _blinkImage: {fileID: 1748264420}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &175453974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,7 +1680,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1277039050}
   _blinkImage: {fileID: 360639398}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &195037646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,7 +1884,6 @@ MonoBehaviour:
   _slotImage: {fileID: 153074779}
   _blinkImage: {fileID: 1190635156}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &246015477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,8 +1937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slotImage: {fileID: 19160760}
   _blinkImage: {fileID: 1965934910}
-  _itemConfig: {fileID: 11400000, guid: a5ebddd6b0c93d442bbe1dc0e3a56e94, type: 2}
-  holdTime: 0.5
+  _itemConfig: {fileID: 11400000, guid: 678253659905f8940bc2235a83e4b7ee, type: 2}
 --- !u!1 &247174294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,7 +2337,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1407951025}
   _blinkImage: {fileID: 1741308466}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &297206584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,7 +2541,6 @@ MonoBehaviour:
   _slotImage: {fileID: 763973178}
   _blinkImage: {fileID: 190340272}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &324883457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,7 +2595,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1534225793}
   _blinkImage: {fileID: 1779017065}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &331486394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,7 +3174,6 @@ MonoBehaviour:
   _slotImage: {fileID: 2080965537}
   _blinkImage: {fileID: 886610414}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &402900224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,7 +3678,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1720039049}
   _blinkImage: {fileID: 1947567852}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &433055357
 GameObject:
   m_ObjectHideFlags: 0
@@ -4122,7 +4107,6 @@ MonoBehaviour:
   _slotImage: {fileID: 402900226}
   _blinkImage: {fileID: 297206584}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &483345791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,7 +4463,6 @@ MonoBehaviour:
   _slotImage: {fileID: 999200056}
   _blinkImage: {fileID: 483345791}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &548337366
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,7 +5087,6 @@ MonoBehaviour:
   _slotImage: {fileID: 2071472477}
   _blinkImage: {fileID: 1299561742}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &684052794
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,7 +5366,6 @@ MonoBehaviour:
   _slotImage: {fileID: 2088872682}
   _blinkImage: {fileID: 1175019907}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &703584542
 GameObject:
   m_ObjectHideFlags: 0
@@ -5439,7 +5420,98 @@ MonoBehaviour:
   _slotImage: {fileID: 1841734712}
   _blinkImage: {fileID: 1550099013}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
+--- !u!1 &714353043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 714353046}
+  - component: {fileID: 714353045}
+  - component: {fileID: 714353044}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &714353044
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714353043}
+  m_Enabled: 1
+--- !u!20 &714353045
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714353043}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &714353046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714353043}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2158.0369, y: 856.6651, z: 6.756055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717831065
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,7 +5641,6 @@ MonoBehaviour:
   _slotImage: {fileID: 264333976}
   _blinkImage: {fileID: 1809285509}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &722886986
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,7 +5695,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1649710334}
   _blinkImage: {fileID: 1097992758}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &737251539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5679,7 +5749,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1476695404}
   _blinkImage: {fileID: 1738269213}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &738780688
 GameObject:
   m_ObjectHideFlags: 0
@@ -5812,7 +5881,6 @@ MonoBehaviour:
   _slotImage: {fileID: 970577647}
   _blinkImage: {fileID: 196678558}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &760071743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,7 +5935,6 @@ MonoBehaviour:
   _slotImage: {fileID: 407716082}
   _blinkImage: {fileID: 13847386}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &763973176
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,7 +6214,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1441112112}
   _blinkImage: {fileID: 616728756}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &808135708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6711,7 +6777,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1994042361}
   _blinkImage: {fileID: 1429531584}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &886610414
 GameObject:
   m_ObjectHideFlags: 0
@@ -6916,7 +6981,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1978118183}
   _blinkImage: {fileID: 2083932579}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &916298852
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,6 +7387,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519491784}
+  - {fileID: 1732095743}
   m_Father: {fileID: 2063315748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7359,6 +7424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bbf2a96c94c874aa837ac097ff1a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dragNDropImage: {fileID: 1732095744}
   _detailsImage: {fileID: 1888200992}
   _detailsText: {fileID: 1017551597}
   _quoteText: {fileID: 808135710}
@@ -7566,7 +7632,6 @@ MonoBehaviour:
   _slotImage: {fileID: 265471475}
   _blinkImage: {fileID: 1045796543}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &985219296
 GameObject:
   m_ObjectHideFlags: 0
@@ -7621,7 +7686,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1462878466}
   _blinkImage: {fileID: 2022370389}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &993415527
 GameObject:
   m_ObjectHideFlags: 0
@@ -8201,7 +8265,6 @@ MonoBehaviour:
   _slotImage: {fileID: 97938605}
   _blinkImage: {fileID: 849077613}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1017551595
 GameObject:
   m_ObjectHideFlags: 0
@@ -8616,7 +8679,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1764275444}
   _blinkImage: {fileID: 153171881}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1045796543
 GameObject:
   m_ObjectHideFlags: 0
@@ -8896,7 +8958,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1018087862}
   _blinkImage: {fileID: 1529980004}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1089396923
 GameObject:
   m_ObjectHideFlags: 0
@@ -9101,7 +9162,6 @@ MonoBehaviour:
   _slotImage: {fileID: 886673716}
   _blinkImage: {fileID: 976859138}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1097992758
 GameObject:
   m_ObjectHideFlags: 0
@@ -9606,7 +9666,6 @@ MonoBehaviour:
   _slotImage: {fileID: 433055359}
   _blinkImage: {fileID: 1851145188}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1188472168
 GameObject:
   m_ObjectHideFlags: 0
@@ -9661,7 +9720,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1653613773}
   _blinkImage: {fileID: 371041340}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1190635156
 GameObject:
   m_ObjectHideFlags: 0
@@ -10352,7 +10410,6 @@ MonoBehaviour:
   _slotImage: {fileID: 942398551}
   _blinkImage: {fileID: 1532783290}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1277039048
 GameObject:
   m_ObjectHideFlags: 0
@@ -10782,7 +10839,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1581517025}
   _blinkImage: {fileID: 1024574922}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1340295642
 GameObject:
   m_ObjectHideFlags: 0
@@ -11137,7 +11193,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1432428462}
   _blinkImage: {fileID: 1766707996}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1380149244
 GameObject:
   m_ObjectHideFlags: 0
@@ -11267,7 +11322,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1320541062}
   _blinkImage: {fileID: 916298852}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1393461617
 GameObject:
   m_ObjectHideFlags: 0
@@ -11472,7 +11526,6 @@ MonoBehaviour:
   _slotImage: {fileID: 824276128}
   _blinkImage: {fileID: 684052794}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1410522755
 GameObject:
   m_ObjectHideFlags: 0
@@ -11527,7 +11580,6 @@ MonoBehaviour:
   _slotImage: {fileID: 161304895}
   _blinkImage: {fileID: 1429950292}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1411774548
 GameObject:
   m_ObjectHideFlags: 0
@@ -11732,7 +11784,6 @@ MonoBehaviour:
   _slotImage: {fileID: 916755671}
   _blinkImage: {fileID: 358005031}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1429531584
 GameObject:
   m_ObjectHideFlags: 0
@@ -12162,7 +12213,6 @@ MonoBehaviour:
   _slotImage: {fileID: 146138879}
   _blinkImage: {fileID: 1442058128}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1441112110
 GameObject:
   m_ObjectHideFlags: 0
@@ -13342,7 +13392,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1714320938}
   _blinkImage: {fileID: 515002624}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1698315342
 GameObject:
   m_ObjectHideFlags: 0
@@ -13397,7 +13446,6 @@ MonoBehaviour:
   _slotImage: {fileID: 2014968019}
   _blinkImage: {fileID: 2089334796}
   _itemConfig: {fileID: 11400000, guid: a5ebddd6b0c93d442bbe1dc0e3a56e94, type: 2}
-  holdTime: 0.25
 --- !u!1 &1700579913
 GameObject:
   m_ObjectHideFlags: 0
@@ -13677,7 +13725,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1000428264}
   _blinkImage: {fileID: 471368981}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1724095939
 GameObject:
   m_ObjectHideFlags: 0
@@ -13732,7 +13779,6 @@ MonoBehaviour:
   _slotImage: {fileID: 304588404}
   _blinkImage: {fileID: 1040452196}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1731196205
 GameObject:
   m_ObjectHideFlags: 0
@@ -13807,6 +13853,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731196205}
+  m_CullTransparentMesh: 1
+--- !u!1 &1732095742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1732095743}
+  - component: {fileID: 1732095745}
+  - component: {fileID: 1732095744}
+  m_Layer: 5
+  m_Name: DragNDropImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1732095743
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732095742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 959037659}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 23.33, y: -141}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1732095744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732095742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1732095745
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732095742}
   m_CullTransparentMesh: 1
 --- !u!1 &1738269213
 GameObject:
@@ -14087,7 +14208,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1871801455}
   _blinkImage: {fileID: 331486394}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1748264420
 GameObject:
   m_ObjectHideFlags: 0
@@ -14292,7 +14412,6 @@ MonoBehaviour:
   _slotImage: {fileID: 175453976}
   _blinkImage: {fileID: 1099923502}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1764275442
 GameObject:
   m_ObjectHideFlags: 0
@@ -14722,7 +14841,6 @@ MonoBehaviour:
   _slotImage: {fileID: 993415529}
   _blinkImage: {fileID: 1013500486}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1809285509
 GameObject:
   m_ObjectHideFlags: 0
@@ -14852,7 +14970,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1826816849}
   _blinkImage: {fileID: 1250302997}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1826397560
 GameObject:
   m_ObjectHideFlags: 0
@@ -15507,7 +15624,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1011967346}
   _blinkImage: {fileID: 2061827492}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1870271915
 GameObject:
   m_ObjectHideFlags: 0
@@ -15787,7 +15903,6 @@ MonoBehaviour:
   _slotImage: {fileID: 404216841}
   _blinkImage: {fileID: 1278667691}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1912964252
 GameObject:
   m_ObjectHideFlags: 0
@@ -15842,7 +15957,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1261288913}
   _blinkImage: {fileID: 1011912036}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1930114481
 GameObject:
   m_ObjectHideFlags: 0
@@ -16197,7 +16311,6 @@ MonoBehaviour:
   _slotImage: {fileID: 576853508}
   _blinkImage: {fileID: 1418019977}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &1978118181
 GameObject:
   m_ObjectHideFlags: 0
@@ -16552,7 +16665,6 @@ MonoBehaviour:
   _slotImage: {fileID: 354715379}
   _blinkImage: {fileID: 1930114481}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &2004119398
 GameObject:
   m_ObjectHideFlags: 0
@@ -16984,7 +17096,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1862868455}
   _blinkImage: {fileID: 1429608025}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &2061827492
 GameObject:
   m_ObjectHideFlags: 0
@@ -17891,7 +18002,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1548574415}
   _blinkImage: {fileID: 375707356}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &2110107618
 GameObject:
   m_ObjectHideFlags: 0
@@ -17946,7 +18056,6 @@ MonoBehaviour:
   _slotImage: {fileID: 1164336542}
   _blinkImage: {fileID: 937349463}
   _itemConfig: {fileID: 0}
-  holdTime: 0.5
 --- !u!1 &2117292688
 GameObject:
   m_ObjectHideFlags: 0
@@ -18104,3 +18213,4 @@ SceneRoots:
   - {fileID: 247174295}
   - {fileID: 2063315748}
   - {fileID: 738780691}
+  - {fileID: 714353046}

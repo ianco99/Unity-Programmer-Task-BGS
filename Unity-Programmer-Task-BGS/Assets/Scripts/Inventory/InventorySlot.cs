@@ -14,14 +14,16 @@ namespace BGS.Inventory
         private Item _storedItem;
 
         private bool isHolding = false;
-        private float holdTime = 0.15f; 
+        private bool isDraggingItem = false;
+        private float holdTime = 0.3f;
         private float holdTimer = 0f;
 
         public Item StoredItem => _storedItem;
 
-        public Action<bool, Item> OnHovering;
+        public Action<bool, InventorySlot> OnHovering;
         public Action<Item> OnLeftClick;
         public Action<Item> OnRightClick;
+        public Action<bool, Item, InventorySlot> OnLeftHold;
 
         private void Awake()
         {
@@ -55,7 +57,7 @@ namespace BGS.Inventory
 
         private void ToggleHover(bool value)
         {
-            OnHovering?.Invoke(value, _storedItem);
+            OnHovering?.Invoke(value, this);
             _blinkImage.SetActive(value);
         }
 
@@ -103,6 +105,9 @@ namespace BGS.Inventory
         public void OnPointerExit(PointerEventData eventData)
         {
             ToggleHover(false);
+
+            isHolding = false;
+            holdTimer = 0f;
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -113,12 +118,23 @@ namespace BGS.Inventory
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            isHolding = false; 
+            isHolding = false;
             holdTimer = 0f;
+
+            if (isDraggingItem && _storedItem != null)
+            {
+                OnLeftHold?.Invoke(false, _storedItem, this);
+            }
         }
 
         private void OnHoldComplete()
         {
+            if (_storedItem != null)
+            {
+                OnLeftHold?.Invoke(true, _storedItem, this);
+            }
+
+            isDraggingItem = true;
             Debug.Log("Hold Completed!");
         }
 

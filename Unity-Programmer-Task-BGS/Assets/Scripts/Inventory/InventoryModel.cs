@@ -20,6 +20,7 @@ namespace BGS.Inventory
             for (int i = 0; i < _slots.Count; i++)
             {
                 _slots[i].OnLeftClick += OnLeftClickHandler;
+                _slots[i].OnLeftHold += OnLeftHoldHandler;
                 _slots[i].OnRightClick += OnRightClickHandler;
                 _slots[i].OnHovering += OnHoveringHandler;
             }
@@ -73,6 +74,21 @@ namespace BGS.Inventory
             }
         }
 
+        public void SwapItems(InventorySlot a, InventorySlot b)
+        {
+            try
+            {
+                var aux = a.StoredItem;
+                a.StoreItem(b.StoredItem);
+                b.StoreItem(aux);
+            }
+            catch (System.Exception)
+            {
+                Debug.LogError("Error swapping items in inventory");
+                throw;
+            }
+        }
+
         public void SetItems(List<InventorySlot> slots)
         {
             _slots = slots;
@@ -85,6 +101,7 @@ namespace BGS.Inventory
                 for (int i = 0; i < _slots.Count; i++)
                 {
                     _slots[i].OnLeftClick -= OnLeftClickHandler;
+                    _slots[i].OnLeftHold -= OnLeftHoldHandler;
                     _slots[i].OnRightClick -= OnLeftClickHandler;
                     _slots[i].OnHovering -= OnHoveringHandler;
                 }
@@ -101,14 +118,19 @@ namespace BGS.Inventory
             _inventoryController.SlotLeftClicked(item);
         }
 
+        private void OnLeftHoldHandler(bool value, Item item, InventorySlot slot)
+        {
+            _inventoryController.SlotLeftHolded(value, item, slot);
+        }
+
         private void OnRightClickHandler(Item item)
         {
             _inventoryController.SlotRightClicked(item);
         }
 
-        private void OnHoveringHandler(bool value, Item item)
+        private void OnHoveringHandler(bool value, InventorySlot slot)
         {
-            _inventoryController.SlotHovering(value, item);
+            _inventoryController.SlotHovering(value, slot);
         }
     }
 }
