@@ -14,13 +14,15 @@ namespace BGS.Inventory
         
         protected bool _isSellable;
         protected int _price;
+        protected int _id;
 
-        public string Type { get => _type; private set => _type = value; }
-        public string Name { get => _type; private set => _type = value; }
-        public string Description { get => _type; private set => _type = value; }
-        public string Quote { get => _type; private set => _type = value; }
+        public string Type { get => _type; protected set => _type = value; }
+        public string Name { get => _type; protected set => _type = value; }
+        public string Description { get => _type; protected set => _type = value; }
+        public string Quote { get => _type; protected set => _type = value; }
 
-        public bool IsSellable { get => _isSellable; private set => _isSellable = value; }
-        public int Price { get => _price; private set => _price = value; }
+        public bool IsSellable { get => _isSellable; protected set => _isSellable = value; }
+        public int Price { get => _price; protected set => _price = value; }
+        public int ID { get => _id; protected set => _id = value; }
     }
 }
