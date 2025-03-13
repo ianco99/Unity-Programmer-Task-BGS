@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 namespace BGS.Inventory
 {
-    public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
     {
-        //private ISlottable _slottable;
-
         [SerializeField] private Image _slotImage;
         [SerializeField] private GameObject _blinkImage;
         [SerializeField] private BaseItemSettings _itemConfig;
 
         private Item _storedItem;
+
+        private bool isHolding = false;
+        private float holdTime = 0.15f; 
+        private float holdTimer = 0f;
 
         public Item StoredItem => _storedItem;
 
@@ -26,16 +28,29 @@ namespace BGS.Inventory
             SlotUpdate();
         }
 
+        private void Update()
+        {
+            if (isHolding)
+            {
+                holdTimer += Time.deltaTime;
+                if (holdTimer >= holdTime)
+                {
+                    OnHoldComplete();
+                    isHolding = false;
+                }
+            }
+        }
+
         public void StoreItem(Item item)
         {
             _storedItem = item;
-            UpdateSlotContent();
+            UpdateSlotVisuals();
         }
 
         public void EmptyItem()
         {
             _storedItem = null;
-            UpdateSlotContent();
+            UpdateSlotVisuals();
         }
 
         private void ToggleHover(bool value)
@@ -57,10 +72,10 @@ namespace BGS.Inventory
                 _storedItem = null;
             }
 
-            UpdateSlotContent();
+            UpdateSlotVisuals();
         }
 
-        private void UpdateSlotContent()
+        private void UpdateSlotVisuals()
         {
             if (_storedItem == null)
             {
@@ -88,6 +103,23 @@ namespace BGS.Inventory
         public void OnPointerExit(PointerEventData eventData)
         {
             ToggleHover(false);
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            isHolding = true;
+            holdTimer = 0f;
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            isHolding = false; 
+            holdTimer = 0f;
+        }
+
+        private void OnHoldComplete()
+        {
+            Debug.Log("Hold Completed!");
         }
 
         public bool IsEmpty() => _storedItem == null;
