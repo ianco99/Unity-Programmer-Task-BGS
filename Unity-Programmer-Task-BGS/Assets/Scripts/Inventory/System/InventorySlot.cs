@@ -46,6 +46,10 @@ namespace BGS.Inventory
         public void StoreItem(Item item)
         {
             _storedItem = item;
+
+            if (item != null)
+                _itemConfig = item.Config;
+            
             UpdateSlotVisuals();
         }
 

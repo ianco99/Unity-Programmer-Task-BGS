@@ -4,15 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TrashSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+namespace BGS.Inventory
 {
-    public Action<bool> OnHovering;
-    public void OnPointerEnter(PointerEventData eventData)
+    public class TrashSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        OnHovering?.Invoke(true);
-    }
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        OnHovering?.Invoke(false);
+        public Action<bool> OnHovering;
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            OnHovering?.Invoke(true);
+        }
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            OnHovering?.Invoke(false);
+        }
     }
 }

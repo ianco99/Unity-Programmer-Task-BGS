@@ -4,6 +4,8 @@ namespace BGS.Inventory
 {
     public class Item
     {
+        public BaseItemSettings Config { get; private set; }
+
         protected string _type;
         protected string _name;
         protected string _description;
@@ -39,6 +41,8 @@ namespace BGS.Inventory
 
             _imagePV = config.ImagePV;
             _imageHD = config.ImageHD;
+
+            Config = config;
         }
     }
 }

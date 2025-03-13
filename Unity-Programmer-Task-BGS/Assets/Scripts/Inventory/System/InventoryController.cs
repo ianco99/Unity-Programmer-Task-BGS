@@ -78,6 +78,13 @@ namespace BGS.Inventory
             return slots;
         }
 
+        public void RemoveAllItems()
+        {
+            _inventoryModel.RemoveAllItems();
+        }
+
+        public List<InventorySlot> GetSlots() => _inventoryModel.Slots;
+
         public void SlotLeftClicked(Item item)
         {
             if (item == null)
@@ -119,12 +126,7 @@ namespace BGS.Inventory
 
         public void SlotRightClicked(Item item)
         {
-            //_inventoryView.ClearDetailsPanel();
-            //
-            //if (item != null)
-            //{
-            //    _inventoryModel.RemoveItem(item);
-            //}
+
         }
 
         public void SlotHovering(bool value, InventorySlot slot)
@@ -145,6 +147,16 @@ namespace BGS.Inventory
         {
             Item item = new Item(_testSettings);
             _inventoryModel.AddItem(item);
+        }
+
+        public void AddItem(Item item)
+        {
+            _inventoryModel.AddItem(item);
+        }
+
+        public void AddItemAt(int index, Item item)
+        {
+            _inventoryModel.AddItemAt(index, item);
         }
     }
 }
