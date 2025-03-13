@@ -4,7 +4,7 @@ namespace BGS.Inventory
 {
     public class Item
     {
-        public BaseItemSettings Config { get; private set; }
+        public BaseItemSettings Config;
 
         public Item(BaseItemSettings config)
         {

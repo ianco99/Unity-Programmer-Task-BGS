@@ -6208,10 +6208,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 31.8
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 2
@@ -12711,8 +12711,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSettings:
-  - {fileID: 11400000, guid: a5ebddd6b0c93d442bbe1dc0e3a56e94, type: 2}
+  - {fileID: 11400000, guid: 11e24a28f800ab34ba238dc046a039af, type: 2}
   - {fileID: 11400000, guid: 678253659905f8940bc2235a83e4b7ee, type: 2}
+  - {fileID: 11400000, guid: 79762525208a5d8469c5ddb3387cb776, type: 2}
+  - {fileID: 11400000, guid: e89b1bc8ed6da7a48996670f76c88fe5, type: 2}
   _inventoryController: {fileID: 959037660}
   inventory: []
 --- !u!1 &1529980004

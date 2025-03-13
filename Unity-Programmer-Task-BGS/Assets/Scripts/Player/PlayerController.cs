@@ -51,6 +51,13 @@ namespace BGS.Player
             InventoryLoader.Instance.LoadInventory();
         }
 
+        private void OnGiveItem1(InputValue action) => InventoryLoader.Instance.LoadItem("Steak");
+        private void OnGiveItem2(InputValue action) => InventoryLoader.Instance.LoadItem("Potion");
+        private void OnGiveItem3(InputValue action) => InventoryLoader.Instance.LoadItem("Chicken");
+        private void OnGiveItem4(InputValue action) => InventoryLoader.Instance.LoadItem("Sword");
+        private void OnGiveItem5(InputValue action) => InventoryLoader.Instance.LoadItem("Sword");
+        private void OnGiveItem6(InputValue action) => InventoryLoader.Instance.LoadItem("Sword");
+
         private Vector3 GetRelativeMovement()
         {
             Vector3 cameraForward = Camera.main.transform.forward;

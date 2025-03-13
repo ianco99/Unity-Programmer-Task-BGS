@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08b0943c9c3a25f468561e0ca583335e, type: 3}
-  m_Name: PotionItemSettings
+  m_Name: SwordSettings
   m_EditorClassIdentifier: 
-  Type: Consumable
-  Name: Potion
-  Description: Restores 50 HP on usage.
-  Quote: May the gods attend your wounds.
-  ImagePV: {fileID: 21300000, guid: 346132269c29c4947a0c252215b9062f, type: 3}
-  ImageHD: {fileID: 21300000, guid: ed7cca1470f34ca439bc0c833f789127, type: 3}
+  Type: Equipable
+  Name: Sword
+  Description: Sharp and sturdy sword to cut, pierce and slash your way through your
+    opponents.
+  Quote: '"..it was a heap of raw iron.."'
+  ImagePV: {fileID: 21300000, guid: e861c4208dbfdfb459b170645d96ea0e, type: 3}
+  ImageHD: {fileID: 21300000, guid: e861c4208dbfdfb459b170645d96ea0e, type: 3}
   IsSellable: 1
   Price: 20
