@@ -1,6 +1,7 @@
 using BGS.Inventory;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 namespace BGS.Player
 {
@@ -8,11 +9,14 @@ namespace BGS.Player
     {
         [SerializeField] private CharacterController _cc;
         [SerializeField] private Animator _animator;
+        [SerializeField] private TMP_Text _healthText;
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _turnSmoothVelocity;
         [SerializeField] private float _turnSmoothTime;
 
         private Vector3 _currentMotion;
+
+        private int _health = 100;
 
         private void Update()
         {
@@ -27,6 +31,8 @@ namespace BGS.Player
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 _cc.Move(moveDir.normalized * _playerSpeed * Time.deltaTime);
             }
+
+            _healthText.text = "Health: " + _health;
         }
 
         private void OnMove(InputValue action)
@@ -71,5 +77,9 @@ namespace BGS.Player
             return cameraForward * _currentMotion.z + cameraRight * _currentMotion.x;
         }
 
+        public void Heal(int healAmount)
+        {
+            _health += healAmount;
+        }
     }
 }

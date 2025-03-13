@@ -2,9 +2,10 @@ namespace BGS.Inventory
 {
     public class HealingItem : Item
     {
+        public int HealAmount;
         public HealingItem(HealingItemSettings config) : base(config)
         {
-            Config = config;
+            HealAmount = config.HealAmount;
         }
     }
 }
