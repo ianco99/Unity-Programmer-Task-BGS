@@ -3,14 +3,23 @@ using UnityEngine;
 
 namespace BGS.Inventory
 {
-    public class InventoryController
+    public class InventoryController : MonoBehaviour
     {
+        [SerializeField] private GameObject _inventorySlotPrefab;
+        [SerializeField] private int _inventorySlotCount;
+
         private List<Item> _items;
+
+        private void Awake()
+        {
+            Init();
+        }
 
         public void Init()
         {
             _items = new List<Item>();
         }
+
 
         public void AddItem(Item itemToAdd)
         {

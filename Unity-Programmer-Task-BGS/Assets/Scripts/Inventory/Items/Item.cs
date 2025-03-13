@@ -24,5 +24,16 @@ namespace BGS.Inventory
         public bool IsSellable { get => _isSellable; protected set => _isSellable = value; }
         public int Price { get => _price; protected set => _price = value; }
         public int ID { get => _id; protected set => _id = value; }
+
+        public Item()
+        {
+            _type = "Item";
+            _name = "Item";
+            _description = "Item";
+            _quote = "Item";
+            _isSellable = false;
+            _price = 0;
+            _id = 0;
+        }
     }
 }

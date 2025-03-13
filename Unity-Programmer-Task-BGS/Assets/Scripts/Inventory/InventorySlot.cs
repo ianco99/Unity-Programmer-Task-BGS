@@ -1,30 +1,37 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+namespace BGS.Inventory
 {
-    private ISlottable slottable;
-    
-    [SerializeField] private Image slotImage;
-    [SerializeField] private GameObject blinkImage;
+    public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    {
+        private ISlottable _slottable;
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("Pointer Enter " + gameObject.name);
-        ToggleHover(true);
-        //throw new System.NotImplementedException();
-    }
+        [SerializeField] private Image _slotImage;
+        [SerializeField] private GameObject _blinkImage;
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("Pointer Exit " + gameObject.name);
-        ToggleHover(false);
-        //throw new System.NotImplementedException();
-    }
-    
-    private void ToggleHover(bool value)
-    {
-        blinkImage.SetActive(value);
+        private Item _storedItem;
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            ToggleHover(true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            ToggleHover(false);
+        }
+
+        public void StoreItem(Item item)
+        {
+            _storedItem = item;
+        }
+
+        private void ToggleHover(bool value)
+        {
+            _blinkImage.SetActive(value);
+        }
+
     }
 }
