@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cc: {fileID: 2550936258701879481}
-  _animator: {fileID: 0}
+  _animator: {fileID: 4638286161530601829}
   _playerSpeed: 15
   _turnSmoothVelocity: 0
   _turnSmoothTime: 0.1
@@ -193,6 +193,11 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!95 &4638286161530601829 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: f2ad8f782ab1cda41a7722695fdba9a9, type: 3}
+  m_PrefabInstance: {fileID: 1239638996890746100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3524140192243055824
 PrefabInstance:
   m_ObjectHideFlags: 0

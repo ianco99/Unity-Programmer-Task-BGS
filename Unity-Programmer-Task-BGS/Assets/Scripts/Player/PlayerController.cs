@@ -35,6 +35,11 @@ namespace BGS.Player
             _currentMotion = new Vector3(actionValue.x, 0, actionValue.y);
         }
 
+        private void OnOpenInventory(InputValue action)
+        {
+            GameManager._instance.ToggleInventory();
+        }
+
         private Vector3 GetRelativeMovement()
         {
             Vector3 cameraForward = Camera.main.transform.forward;
