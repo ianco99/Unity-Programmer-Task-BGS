@@ -7,6 +7,7 @@ namespace BGS.Inventory
 {
     public class InventoryLoader : MonoBehaviour
     {
+        [SerializeField] private BaseItemSettings[] itemSettings;
         [SerializeField] private InventoryController _inventoryController;
         public static InventoryLoader Instance;
         private string _savePath;
@@ -60,9 +61,23 @@ namespace BGS.Inventory
         {
             if (File.Exists(_savePath))
             {
+                _inventoryController.RemoveAllItems(); // Clear inventory
+
                 string json = File.ReadAllText(_savePath);
                 InventoryData data = JsonUtility.FromJson<InventoryData>(json);
                 inventory = data.items; // Restore inventory
+
+                for (int i = 0; i < inventory.Count; i++)
+                {
+                    for (int j = 0; j < itemSettings.Length; j++)
+                    {
+                        if (inventory[i].itemType == itemSettings[j].Type)
+                        {
+                            Item loadedItem = new Item(itemSettings[j]);
+                            _inventoryController.AddItemAt(inventory[i].slotID, loadedItem);
+                        }
+                    }
+                }
                 Debug.Log("Inventory loaded successfully!");
             }
             else

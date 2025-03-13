@@ -30,7 +30,7 @@ namespace BGS.Inventory
 
         public void DeInit()
         {
-            ClearItems();
+            DeInitSlots();
         }
 
         public void AddItem(Item itemToAdd)
@@ -49,6 +49,19 @@ namespace BGS.Inventory
             catch (System.Exception)
             {
                 Debug.LogError("Error adding itemToAdd to inventory");
+                throw;
+            }
+        }
+
+        public void AddItemAt(int index, Item item)
+        {
+            try
+            {
+                _slots[index].StoreItem(item);
+            }
+            catch (System.Exception)
+            {
+                Debug.LogError($"Error storing item at {index} index");
                 throw;
             }
         }
@@ -91,12 +104,28 @@ namespace BGS.Inventory
             }
         }
 
+        public void RemoveAllItems()
+        {
+            try
+            {
+                foreach (var slot in _slots)
+                {
+                    slot.EmptyItem();
+                }
+            }
+            catch (System.Exception)
+            {
+                Debug.LogError("Error removing all items from inventory");
+                throw;
+            }
+        }
+
         public void SetItems(List<InventorySlot> slots)
         {
             _slots = slots;
         }
 
-        public void ClearItems()
+        public void DeInitSlots()
         {
             try
             {

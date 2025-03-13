@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b0943c9c3a25f468561e0ca583335e, type: 3}
   m_Name: PotionItemSettings 1
   m_EditorClassIdentifier: 
-  Type: Consumable
+  Type: Equipable
   Name: Potion
   Description: Restores 50 HP on usage.
   Quote: May the gods attend your wounds.

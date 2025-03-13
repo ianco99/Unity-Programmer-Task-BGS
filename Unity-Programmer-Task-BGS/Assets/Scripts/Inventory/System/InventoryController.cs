@@ -78,6 +78,11 @@ namespace BGS.Inventory
             return slots;
         }
 
+        public void RemoveAllItems()
+        {
+            _inventoryModel.RemoveAllItems();
+        }
+
         public List<InventorySlot> GetSlots() => _inventoryModel.Slots;
 
         public void SlotLeftClicked(Item item)
@@ -142,6 +147,16 @@ namespace BGS.Inventory
         {
             Item item = new Item(_testSettings);
             _inventoryModel.AddItem(item);
+        }
+
+        public void AddItem(Item item)
+        {
+            _inventoryModel.AddItem(item);
+        }
+
+        public void AddItemAt(int index, Item item)
+        {
+            _inventoryModel.AddItemAt(index, item);
         }
     }
 }

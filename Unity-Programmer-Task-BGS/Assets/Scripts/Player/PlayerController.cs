@@ -46,6 +46,11 @@ namespace BGS.Player
             InventoryLoader.Instance.SaveInventory();
         }
 
+        private void OnLoadTest(InputValue action)
+        {
+            InventoryLoader.Instance.LoadInventory();
+        }
+
         private Vector3 GetRelativeMovement()
         {
             Vector3 cameraForward = Camera.main.transform.forward;
