@@ -90,14 +90,14 @@ namespace BGS.Inventory
             if (item == null)
                 _inventoryView.ClearDetailsPanel();
             else
-                _inventoryView.UpdateDetailsPanel(item.ImageHD, item.Description, item.Quote);
+                _inventoryView.UpdateDetailsPanel(item.Config.ImageHD, item.Config.Description, item.Config.Quote);
         }
 
         public void SlotLeftHolded(bool value, Item item, InventorySlot slot)
         {
             if (value)
             {
-                _inventoryView.SetDragNDropImage(item?.ImagePV);
+                _inventoryView.SetDragNDropImage(item?.Config.ImagePV);
 
                 for (int i = 0; i < _trashSlots.Length; i++)
                 {

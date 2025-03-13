@@ -90,7 +90,7 @@ namespace BGS.Inventory
             }
 
             _slotImage.gameObject.SetActive(true);
-            _slotImage.sprite = _storedItem.ImagePV;
+            _slotImage.sprite = _storedItem.Config.ImagePV;
         }
 
         public void OnPointerClick(PointerEventData eventData)

@@ -51,7 +51,7 @@ namespace BGS.Inventory
             {
                 if (slotData[i].StoredItem != null)
                 {
-                    InventoryItemData data = new InventoryItemData(slotData[i].StoredItem.Type, i);
+                    InventoryItemData data = new InventoryItemData(slotData[i].StoredItem.Config.Type, i);
                     inventory.Add(data);
                 }
             }
