@@ -58,6 +58,60 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GiveItem1",
+                    "type": "Button",
+                    "id": "ed48ac61-02ee-4843-834a-2fb2db1144d7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GiveItem2",
+                    "type": "Button",
+                    "id": "9bfa4a2d-20e8-472f-b724-da590be349dc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GiveItem3",
+                    "type": "Button",
+                    "id": "fc0cbd91-b03d-4b90-8c2a-201c41e30fff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GiveItem4",
+                    "type": "Button",
+                    "id": "b5fe59fe-cb58-43a9-ab15-b97d269106f8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GiveItem5",
+                    "type": "Button",
+                    "id": "10c13ed1-c3e4-4fa4-bb07-f40a82a77414",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GiveItem6",
+                    "type": "Button",
+                    "id": "a88c0534-d235-4b5c-b933-b19d6ba3b3bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -311,6 +365,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "LoadTest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e99ac2e-f085-4064-a0e0-75c0b06aafb4",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GiveItem1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "34d230dd-f151-47be-96b1-b7b62b88e0db",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GiveItem2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "718dd259-4080-4bcb-b34d-07f058658f92",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GiveItem3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f99b24e-eb83-4cb7-8ff7-7078bb807d55",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GiveItem4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8382ba79-b51d-4c28-bb59-8a8b7406d936",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GiveItem5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "895c88ff-8320-49d7-a0b6-d37455de0481",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GiveItem6",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,3 +1,4 @@
+using BGS.Player;
 using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace BGS.Inventory
         [SerializeField] private int _inventorySize;
 
         private InventorySlot _hoveredSlot;
+        private PlayerController _playerRef;
         private bool _hoveringTrash;
 
         private void Awake()
@@ -31,6 +33,8 @@ namespace BGS.Inventory
 
         private void Init()
         {
+            _playerRef = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
+            
             _inventoryModel.Init(this);
 
             for (int i = 0; i < _trashSlots.Length; i++)
@@ -90,14 +94,14 @@ namespace BGS.Inventory
             if (item == null)
                 _inventoryView.ClearDetailsPanel();
             else
-                _inventoryView.UpdateDetailsPanel(item.ImageHD, item.Description, item.Quote);
+                _inventoryView.UpdateDetailsPanel(item.Config.ImageHD, item.Config.Description, item.Config.Quote);
         }
 
         public void SlotLeftHolded(bool value, Item item, InventorySlot slot)
         {
             if (value)
             {
-                _inventoryView.SetDragNDropImage(item?.ImagePV);
+                _inventoryView.SetDragNDropImage(item?.Config.ImagePV);
 
                 for (int i = 0; i < _trashSlots.Length; i++)
                 {
@@ -126,7 +130,13 @@ namespace BGS.Inventory
 
         public void SlotRightClicked(Item item)
         {
+            if(item.Config.Type == "Consumable")
+            {
+                int heal = (item.Config as HealingItemSettings).HealAmount;
+                _playerRef.Heal(heal);
 
+                _inventoryModel.RemoveItem(item);
+            }
         }
 
         public void SlotHovering(bool value, InventorySlot slot)

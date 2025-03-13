@@ -15,7 +15,7 @@ namespace BGS.Inventory
 
         private bool isHolding = false;
         private bool isDraggingItem = false;
-        private float holdTime = 0.3f;
+        private float holdTime = 0.15f;
         private float holdTimer = 0f;
 
         public Item StoredItem => _storedItem;
@@ -90,7 +90,7 @@ namespace BGS.Inventory
             }
 
             _slotImage.gameObject.SetActive(true);
-            _slotImage.sprite = _storedItem.ImagePV;
+            _slotImage.sprite = _storedItem.Config.ImagePV;
         }
 
         public void OnPointerClick(PointerEventData eventData)

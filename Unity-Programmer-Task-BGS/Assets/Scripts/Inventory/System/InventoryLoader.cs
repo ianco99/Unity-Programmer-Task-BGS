@@ -51,7 +51,7 @@ namespace BGS.Inventory
             {
                 if (slotData[i].StoredItem != null)
                 {
-                    InventoryItemData data = new InventoryItemData(slotData[i].StoredItem.Type, i);
+                    InventoryItemData data = new InventoryItemData(slotData[i].StoredItem.Config.Name, i);
                     inventory.Add(data);
                 }
             }
@@ -71,7 +71,7 @@ namespace BGS.Inventory
                 {
                     for (int j = 0; j < itemSettings.Length; j++)
                     {
-                        if (inventory[i].itemType == itemSettings[j].Type)
+                        if (inventory[i].itemName == itemSettings[j].Name)
                         {
                             Item loadedItem = new Item(itemSettings[j]);
                             _inventoryController.AddItemAt(inventory[i].slotID, loadedItem);
@@ -83,6 +83,27 @@ namespace BGS.Inventory
             else
             {
                 Debug.LogWarning("No inventory file found, starting fresh.");
+            }
+        }
+
+        public void LoadItem(string name)
+        {
+            Debug.Log("arrived");
+            for (int i = 0; i < itemSettings.Length; i++)
+            {
+                if (name == itemSettings[i].Name)
+                {
+                    Item loadedItem = new Item(itemSettings[i]);
+                    switch (itemSettings[i].Type)
+                    {
+                        case "Consumable":
+                            loadedItem = new HealingItem(itemSettings[i] as HealingItemSettings);
+                            break;
+                        default:
+                            break;
+                    }
+                    _inventoryController.AddItem(loadedItem);
+                }
             }
         }
     }

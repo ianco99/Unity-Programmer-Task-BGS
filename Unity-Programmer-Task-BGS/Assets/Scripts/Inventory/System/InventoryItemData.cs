@@ -3,12 +3,12 @@ namespace BGS.Inventory
     [System.Serializable]
     public class InventoryItemData
     {
-        public string itemType;
+        public string itemName;
         public int slotID;
 
         public InventoryItemData(string type, int slotId)
         {
-            itemType = type;
+            itemName = type;
             slotID = slotId;
         }
     }
