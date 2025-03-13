@@ -6,6 +6,7 @@ namespace BGS.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private CharacterController _cc;
+        [SerializeField] private Animator _animator;
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _turnSmoothVelocity;
         [SerializeField] private float _turnSmoothTime;
@@ -14,6 +15,7 @@ namespace BGS.Player
 
         private void Update()
         {
+            _animator.SetFloat("Velocity", _currentMotion.magnitude);
 
             if (_currentMotion.magnitude >= 0.1f)   //brackeys 3d cc
             {
