@@ -6,13 +6,15 @@ namespace BGS.Inventory
 {
     public class InventoryController : MonoBehaviour
     {
+        [SerializeField] private InventoryView _inventoryView;
+        private InventoryModel _inventoryModel = new InventoryModel();
+
         [SerializeField] private GameObject _inventorySlotPrefab;
         [SerializeField] private Transform _slotsParent;
-        [SerializeField] private List<InventorySlot> _slots;
 
         [SerializeField] private int _inventorySize;
 
-        [SerializeField] private InventoryView _inventoryView;
+        private InventorySlot _editorInstantiatedSlots;
 
         private void Awake()
         {
@@ -21,35 +23,54 @@ namespace BGS.Inventory
 
         private void OnDestroy()
         {
-            ClearItems();
+            _inventoryModel.DeInit();
         }
 
         private void Init()
         {
-
-            if (_slots == null)
-                InitializeInventorySlots();
-
-            for (int i = 0; i < _slots.Count; i++)
-            {
-                _slots[i].OnClick += OnClickHandler;
-                _slots[i].OnHovering += OnHoveringHandler;
-            }
+            _inventoryModel.Init(this);
         }
 
         [ContextMenu("Spawn slot grid")]    //Button useful for editor visual adjustments
-        private void InitializeInventorySlots()
+        public void InitializeInventorySlots()
         {
-            _slots = new List<InventorySlot>();
 
-            for (int i = 0; i < _inventorySize; i++)
+            var _slots = new List<InventorySlot>();
+
+            _slots.AddRange(RetrieveEditorInventorySlots());
+
+            for (int i = _slots.Count; i < _inventorySize; i++)
             {
                 GameObject slot = Instantiate(_inventorySlotPrefab, _slotsParent);
                 _slots.Add(slot.GetComponent<InventorySlot>());
             }
+
+            _inventoryModel.SetItems(_slots);
         }
 
-        private void OnClickHandler(Item item)
+        [ContextMenu("Delete slot grid")]
+        private void DeInitializeInventorySlots()
+        {
+            var childs = _slotsParent.GetComponentsInChildren<InventorySlot>();
+
+            foreach (InventorySlot child in childs)
+            {
+                DestroyImmediate(child.gameObject);
+            }
+        }
+
+        public List<InventorySlot> RetrieveEditorInventorySlots()
+        {
+            List<InventorySlot> slots = new List<InventorySlot>();
+
+            var childs = _slotsParent.GetComponentsInChildren<InventorySlot>();
+
+            slots.AddRange(childs);
+
+            return slots;
+        }
+
+        public void SlotClicked(Item item)
         {
             if (item == null)
                 _inventoryView.ClearDetailsPanel();
@@ -57,67 +78,9 @@ namespace BGS.Inventory
                 _inventoryView.UpdateDetailsPanel(item.ImageHD, item.Description, item.Quote);
         }
 
-        private void OnHoveringHandler(bool value, Item item)
+        public void SlotHovering(bool value, Item item)
         {
 
-        }
-
-        public void AddItem(Item itemToAdd)
-        {
-            try
-            {
-                foreach (var item in _slots)
-                {
-                    if (item.IsEmpty())
-                        item.StoreItem(itemToAdd);
-                }
-            }
-            catch (System.Exception)
-            {
-                Debug.LogError("Error adding itemToAdd to inventory");
-                throw;
-            }
-        }
-
-        public void RemoveItem(int idToRemove)
-        {
-            try
-            {
-                int index = 0;
-                foreach (var item in _slots)
-                {
-                    if (item.StoredItem.ID == idToRemove)
-                    {
-                        item.OnClick -= OnClickHandler;
-                        item.OnHovering -= OnHoveringHandler;
-                        _slots.RemoveAt(index);
-                    }
-
-                    index++;
-                }
-            }
-            catch (System.Exception)
-            {
-                Debug.LogError("Error removing itemToAdd from inventory");
-                throw;
-            }
-        }
-
-        public void ClearItems()
-        {
-            try
-            {
-                for (int i = 0; i < _slots.Count; i++)
-                {
-                    _slots[i].OnClick -= OnClickHandler;
-                    _slots[i].OnHovering -= OnHoveringHandler;
-                }
-            }
-            catch (System.Exception)
-            {
-                Debug.LogError("Error clearing list.");
-                throw;
-            }
         }
     }
 }
