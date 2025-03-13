@@ -10,11 +10,10 @@ namespace BGS.Inventory
         private InventoryModel _inventoryModel = new InventoryModel();
 
         [SerializeField] private GameObject _inventorySlotPrefab;
+        [SerializeField] private BaseItemSettings _testSettings;
         [SerializeField] private Transform _slotsParent;
 
         [SerializeField] private int _inventorySize;
-
-        private InventorySlot _editorInstantiatedSlots;
 
         private void Awake()
         {
@@ -91,6 +90,13 @@ namespace BGS.Inventory
         public void SlotHovering(bool value, Item item)
         {
 
+        }
+
+        [ContextMenu("Add test item")]
+        private void AddTestItem()
+        {
+            Item item = new Item(_testSettings);
+            _inventoryModel.AddItem(item);
         }
     }
 }

@@ -269,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &19160759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 346132269c29c4947a0c252215b9062f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slotImage: {fileID: 1731196207}
   _blinkImage: {fileID: 1370126471}
-  _itemConfig: {fileID: 0}
+  _itemConfig: {fileID: 11400000, guid: a5ebddd6b0c93d442bbe1dc0e3a56e94, type: 2}
 --- !u!1 &48940001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +1937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slotImage: {fileID: 19160760}
   _blinkImage: {fileID: 1965934910}
-  _itemConfig: {fileID: 0}
+  _itemConfig: {fileID: 11400000, guid: a5ebddd6b0c93d442bbe1dc0e3a56e94, type: 2}
 --- !u!1 &249872348
 GameObject:
   m_ObjectHideFlags: 0
@@ -7271,6 +7271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventoryView: {fileID: 959037661}
   _inventorySlotPrefab: {fileID: 8398922113337506253, guid: 6a5b4f5158f95ef44bb883af3143213a, type: 3}
+  _testSettings: {fileID: 11400000, guid: a5ebddd6b0c93d442bbe1dc0e3a56e94, type: 2}
   _slotsParent: {fileID: 560127448}
   _inventorySize: 60
 --- !u!114 &959037661
@@ -13656,7 +13657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1731196206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13696,7 +13697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 346132269c29c4947a0c252215b9062f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -37,7 +37,10 @@ namespace BGS.Inventory
                 foreach (var slot in _slots)
                 {
                     if (slot.IsEmpty())
+                    {
                         slot.StoreItem(itemToAdd);
+                        break;
+                    }
                 }
             }
             catch (System.Exception)
