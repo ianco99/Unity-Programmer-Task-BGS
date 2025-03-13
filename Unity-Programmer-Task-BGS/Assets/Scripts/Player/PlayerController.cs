@@ -1,3 +1,4 @@
+using BGS.Inventory;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,6 +41,11 @@ namespace BGS.Player
             GameManager._instance.ToggleInventory();
         }
 
+        private void OnUse(InputValue action)
+        {
+            InventoryLoader.Instance.SaveInventory();
+        }
+
         private Vector3 GetRelativeMovement()
         {
             Vector3 cameraForward = Camera.main.transform.forward;
@@ -52,5 +58,6 @@ namespace BGS.Player
 
             return cameraForward * _currentMotion.z + cameraRight * _currentMotion.x;
         }
+
     }
 }

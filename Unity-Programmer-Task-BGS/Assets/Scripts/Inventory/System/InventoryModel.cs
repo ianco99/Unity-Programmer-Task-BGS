@@ -10,6 +10,8 @@ namespace BGS.Inventory
 
         private InventoryController _inventoryController;
 
+        public List<InventorySlot> Slots => _slots;
+
         public void Init(InventoryController controller)
         {
             _inventoryController = controller;
