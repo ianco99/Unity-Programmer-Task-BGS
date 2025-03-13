@@ -12,7 +12,7 @@ namespace BGS.Player
 
         private void Update()
         {
-            _cc.SimpleMove(currentMotion * _playerSpeed);
+            _cc.SimpleMove(GetRelativeMovement() * _playerSpeed);
         }
 
         private void OnMove(InputValue action)
@@ -20,6 +20,19 @@ namespace BGS.Player
             Vector2 actionValue = action.Get<Vector2>();
 
             currentMotion = new Vector3(actionValue.x, 0, actionValue.y);
+        }
+
+        private Vector3 GetRelativeMovement()
+        {
+            Vector3 cameraForward = Camera.main.transform.forward;
+            cameraForward.y = 0f;
+            cameraForward = cameraForward.normalized;
+
+            Vector3 cameraRight = Camera.main.transform.right;
+            cameraRight.y = 0f;
+            cameraRight = cameraRight.normalized;
+
+            return cameraForward * currentMotion.z + cameraRight * currentMotion.x;
         }
     }
 }
