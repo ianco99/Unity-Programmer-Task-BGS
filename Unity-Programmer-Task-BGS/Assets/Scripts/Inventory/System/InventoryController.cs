@@ -1,6 +1,5 @@
 using BGS.Player;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 namespace BGS.Inventory
@@ -41,6 +40,8 @@ namespace BGS.Inventory
             {
                 _trashSlots[i].OnHovering += TrashHovering;
             }
+
+            gameObject.SetActive(false);
         }
 
         [ContextMenu("Spawn slot grid")]    //Button useful for editor visual adjustments
